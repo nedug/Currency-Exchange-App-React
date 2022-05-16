@@ -1,4 +1,5 @@
 import {ACTIONS_TYPE, CurrencyReducersTypes} from './actions';
+import {IGlobalState} from "./state";
 
 export type CurrencyType = {
     currencyName: string;
@@ -65,3 +66,6 @@ export const currencyReducer = (state: CurrencyState = initialState, action: Cur
             return state;
     }
 };
+
+/* Функция для получения нужного стейта */
+export const selectAllCurrencyState = (state: IGlobalState): CurrencyState => state.currency;
