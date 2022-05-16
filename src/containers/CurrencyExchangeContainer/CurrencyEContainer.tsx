@@ -1,14 +1,15 @@
 import React from 'react';
 import CurrencyExchange from '../../components/CurrencyExchange/CurrencyExchange';
-import { CurrencyState, CurrencyType } from '../../redux/currencyReducer';
-import { Dispatch } from 'redux';
+import {CurrencyState, CurrencyType} from '../../redux/currencyReducer';
+import {Dispatch} from 'redux';
 import {
     ChangeActionAC,
     ChangeCurrencyFieldAC,
     СhangeCurrentCurrencyAC,
     CurrencyReducersTypes
 } from '../../redux/actions';
-import { connect, ConnectedProps } from 'react-redux';
+import {connect, ConnectedProps} from 'react-redux';
+
 
 const CurrencyEContainer: React.FC<TProps> = props => {
 
@@ -76,7 +77,7 @@ const CurrencyEContainer: React.FC<TProps> = props => {
     );
 };
 
-const mapStateToProps = ( { currency } : {currency: CurrencyState} ): CurrencyState => {
+const mapStateToProps = ({currency}: { currency: CurrencyState }): CurrencyState => {
     return {
         currencies: currency.currencies,
         currentCurrency: currency.currentCurrency,
@@ -87,7 +88,7 @@ const mapStateToProps = ( { currency } : {currency: CurrencyState} ): CurrencySt
 };
 
 // @ts-ignore
-const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>) : any => {
+const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>): any => {
     return {
         setCurrencyAmount(amountOfBYN: string, amountOfCurrency: string) {
             dispatch(ChangeCurrencyFieldAC(amountOfBYN, amountOfCurrency));

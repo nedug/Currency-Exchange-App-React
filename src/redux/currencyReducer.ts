@@ -1,6 +1,5 @@
 import { CurrencyReducersTypes } from './actions';
 
-
 export type CurrencyType = {
     currencyName: string;
     buyRate: number;
@@ -13,6 +12,7 @@ export type CurrencyState = {
     amountOfBYN: string;
     amountOfCurrency: string;
 };
+
 
 const initialState: CurrencyState = {
     currencies: [
