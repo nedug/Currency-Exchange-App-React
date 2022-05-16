@@ -5,8 +5,8 @@ import {Dispatch} from 'redux';
 import {
     ChangeActionAC,
     ChangeCurrencyFieldAC,
-    СhangeCurrentCurrencyAC,
-    CurrencyReducersTypes
+    ChangeCurrentCurrencyAC,
+    CurrencyReducersTypes,
 } from '../../redux/actions';
 import {connect, ConnectedProps} from 'react-redux';
 
@@ -87,7 +87,6 @@ const mapStateToProps = ({currency}: { currency: CurrencyState }): CurrencyState
     };
 };
 
-// @ts-ignore
 const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>): any => {
     return {
         setCurrencyAmount(amountOfBYN: string, amountOfCurrency: string) {
@@ -97,12 +96,11 @@ const mapDispatchToProps = (dispatch: Dispatch<CurrencyReducersTypes>): any => {
             dispatch(ChangeActionAC(isBuying));
         },
         changeCurrency(currency: string) {
-            dispatch(СhangeCurrentCurrencyAC(currency));
+            dispatch(ChangeCurrentCurrencyAC(currency));
         },
     };
 };
 
-// @ts-ignore
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
 type TProps = ConnectedProps<typeof connector>;
