@@ -55,6 +55,7 @@ const CurrencyEContainer = () => {
             }
         }
     };
+
     const changeAction = (e: React.MouseEvent<HTMLSpanElement>) => {
         e.currentTarget.dataset.action === 'buy'
             ? dispatch(ChangeActionAC(true))
